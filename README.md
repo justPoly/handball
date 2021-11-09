@@ -1,6 +1,4 @@
 # handball
 
-This is the repo for our handball game.
-
-Development - Features heading for main
+All development features should be send to this branch "development"
 
