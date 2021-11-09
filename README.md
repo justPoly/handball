@@ -2,7 +2,6 @@
 
 Features can be developed on this branch called "feature-1"
 
-<<<<<<< HEAD
 # Getting Started
 1. Open your Terminal and use cd to move to the directory you want the remote repo to be. Eg. cd Desktop
 2. git clone to have a remote repo of this on your laptop.
@@ -16,7 +15,4 @@ To Push back to Github
 3. git commit -m"say what you did"
 4. git push
 5. Open github and make a pull requests. Select "development" branch and compare with your current branch
-=======
-Development - Features heading for main
->>>>>>> development
 
