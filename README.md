@@ -1,6 +1,6 @@
 # handball
 
-This is the repo for our handball game.
+This is the main branch. 
 
-Development - Features heading for main
+Please do not send a pull request to this branch
 
