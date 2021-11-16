@@ -608,7 +608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9377e6fabaa1a48a3650350d8d1315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 986933875}
+  ball: {fileID: 0}
 --- !u!4 &883473204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1493958779012619316, guid: b9de24523a11d714db3851b5f0f9d527,
@@ -910,6 +910,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2efad73997288694a9349858537170af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  turnSpeed: 25
+  horizontalInput: 0
 --- !u!1 &1001843705
 GameObject:
   m_ObjectHideFlags: 0
