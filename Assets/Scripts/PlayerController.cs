@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
     public float speed = 5.0f;
@@ -42,4 +42,5 @@ public class Player : MonoBehaviour
             collision.transform.parent = transform;
         }
     }
+
 }

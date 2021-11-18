@@ -2,18 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball : MonoBehaviour
+public class BallController : MonoBehaviour
 {
-   
     public Vector3 ballattachment;
     private Rigidbody ballRb;
     public Transform player;
 
-    public float ballThrowingForce = 5f;
-    public float ballDistance = 2f;
-    private bool holdingBall = true;
-    
-   
     // Start is called before the first frame update
     void Start()
     {
@@ -21,20 +15,11 @@ public class Ball : MonoBehaviour
         transform.position = ballattachment;
         ballRb.useGravity = false;
     }
-  // Update is called once per frame
+
+    // Update is called once per frame
     void Update()
     {
-       /* if (holdingBall)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-              
 
-                ballRb.AddForce(transform.forward * ballThrowingForce);
-
-            }
-          
-        }*/
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -45,5 +30,5 @@ public class Ball : MonoBehaviour
             collision.transform.parent = ballRb.transform;
         }
     }
-}
 
+}
