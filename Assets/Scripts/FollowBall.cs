@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowBall : MonoBehaviour
 {
-
+   /* 
     //Transform of the ball
     public Transform ball;
 
@@ -27,4 +27,5 @@ public class FollowBall : MonoBehaviour
         transform.position = newPosition;
 
     }
+    */
 }
