@@ -21,7 +21,6 @@ public class Passing : MonoBehaviour
             float vertical = Input.GetAxis("Vertical");
 
             Vector3 direction = new Vector3(horizontal, 0f, vertical);
-            Debug.DrawRay(transform.position, direction * 10f, Color.red);
 
             var targetPlayer = FindPlayerInDirection(direction);
             UpdateRenderers(targetPlayer);
