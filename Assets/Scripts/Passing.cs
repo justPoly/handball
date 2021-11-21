@@ -6,6 +6,7 @@ public class Passing : MonoBehaviour
     private Passing[] allOtherPlayers;
     private Ball ball;
     private float passForce = 900f;
+    public Joystick joystick;
 
     private void Awake()
     {
@@ -17,8 +18,8 @@ public class Passing : MonoBehaviour
     {
         if (IHaveBall())
         {
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
+            float horizontal = joystick.Horizontal; //Input.GetAxis("Horizontal");
+            float vertical = joystick.Vertical; //Input.GetAxis("Vertical");
 
             Vector3 direction = new Vector3(horizontal, 0f, vertical);
             Debug.DrawRay(transform.position, direction * 10f, Color.red);
@@ -28,7 +29,8 @@ public class Passing : MonoBehaviour
 
             if (targetPlayer != null)
             {
-                if (Input.GetButton("Fire1"))
+                if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began) //(Input.GetButton("Fire1"))
+                             
                     PassBallToPlayer(targetPlayer);
             }
         }
