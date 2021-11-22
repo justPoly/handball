@@ -6,18 +6,18 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     private NavMeshAgent agent;
-    private Ball player;
+    private Ball ball;
     public float chasingDistance = 12f;
-    public float chasingInterval = 0f;
+    public float chasingInterval = 2f;
     public float chasingTimer;
 
     public float speed = 8f;
     void Start()
     {
-        player = GameObject.Find("Ball").GetComponent<Ball>(); 
+        ball = GameObject.Find("Ball").GetComponent<Ball>(); 
         agent = GetComponent<NavMeshAgent>();
 
-        agent.SetDestination(player.transform.position.normalized);
+        agent.SetDestination(ball.transform.position);
 
 
     }
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
         if (chasingTimer <= 0)
         {
             chasingTimer = chasingInterval;
-            agent.SetDestination(player.transform.position.normalized);
+            agent.SetDestination(ball.transform.position);
 
         }
     }
