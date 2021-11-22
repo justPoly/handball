@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
     public float speed = 1.0f;
+    //public bool moveForward =true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,16 +17,23 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*if (moveForward)
+        {
+            playerRb.AddForce(Vector3.forward * speed);
+        }*/
+       
         //Up / down movement
         float forwardInput = Input.GetAxis("Vertical");
         playerRb.AddForce(Vector3.forward * speed * forwardInput);
 
-        //Left/ right movement
-        float horizontalInput = Input.GetAxis("Horizontal");
-        playerRb.AddForce(Vector3.right * speed * horizontalInput);
-        
+         //Left/ right movement
+         float horizontalInput = Input.GetAxis("Horizontal");
+         playerRb.AddForce(Vector3.right * speed * horizontalInput);
+
+   
+
         //Keep player in-bound on the left
-        if(transform.position.x < -25) {
+        if (transform.position.x < -25) {
             transform.position = new Vector3(-25, transform.position.y, transform.position.z);
         }
         //Keep player in-bound on the right
@@ -32,4 +41,8 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(25, transform.position.y, transform.position.z);
         }
     }
+  /*  public void MoveForward()
+    {
+        moveForward = true;
+    }*/
 }
