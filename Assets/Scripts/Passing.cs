@@ -7,6 +7,7 @@ public class Passing : MonoBehaviour
     private Ball ball;
     private float passForce = 900f;
     public Joystick joystick;
+    
 
     private void Awake()
     {
@@ -65,7 +66,7 @@ public class Passing : MonoBehaviour
         return closestAngle;
     }
 
-    private bool IHaveBall()
+    public bool IHaveBall()
     {
         return transform.childCount > 0;
     }
