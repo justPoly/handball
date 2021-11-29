@@ -7,7 +7,7 @@ public class FlockManager : MonoBehaviour
    public GameObject personPrefab;
    public int numPerson = 2;
    public GameObject[] allPerson;
-   public Vector3 moveLimits = new Vector3(10, 5, 20);
+   public Vector3 moveLimits = new Vector3(10, 5, 10);
     
    [Header("Person Settings")]
    [Range(0.0f, 5.0f)]
