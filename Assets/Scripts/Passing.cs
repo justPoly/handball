@@ -19,6 +19,24 @@ public class Passing : MonoBehaviour
     {
         if (IHaveBall())
         {
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
+
+            Vector3 direction = new Vector3(horizontal, 0f, vertical);
+            Debug.DrawRay(transform.position, direction * 10f, Color.red);
+
+            var targetPlayer = FindPlayerInDirection(direction);
+            UpdateRenderers(targetPlayer);
+
+            if (targetPlayer != null)
+            {
+                if (Input.GetButton("Fire1"))
+                    PassBallToPlayer(targetPlayer);
+            }
+        }
+        
+        if (IHaveBall())
+        {
             float horizontal = joystick.Horizontal;
             float vertical = joystick.Vertical;
 
