@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlockManager : MonoBehaviour
 {
-   public GameObject personPrefab;
+   public GameObject[] personPrefabs;
    public int numPerson = 2;
    public GameObject[] allPerson;
    public Vector3 moveLimits = new Vector3(10, 5, 10);
@@ -21,11 +21,15 @@ public class FlockManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    //    int personIndex = Random.Range(0, personPrefabs.Length);
        allPerson = new GameObject[numPerson];
-       for(int i = 0; i < numPerson; i++)
+       for(int i = 0; i < personPrefabs.Length; i++)
         {
             Vector3 relative_spawn = new Vector3(i%4, 0.30f, i/4);
-            allPerson[i] = (GameObject) Instantiate(personPrefab, transform.position + (relative_spawn * 10.0f), transform.rotation); 
+            allPerson[i] = Instantiate(personPrefabs[i], transform.position + (relative_spawn * 10.0f), transform.rotation) as GameObject; 
+
+            // Vector3 rel_spawn = new Vector3(i%10, 0.30f, i/10);
+            // allPerson[i] = (GameObject) Instantiate(personPrefab1, transform.position + (rel_spawn * 10.0f), transform.rotation); 
 
             allPerson[i].GetComponent<Flock>().myManager = this;
         }
