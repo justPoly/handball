@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b26091789b53363418dcd766fc4da7f9
+guid: 85d3208c5662dd54e93253ccc669cfa7
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -122,7 +122,7 @@ ModelImporter:
     400114: Spine
     400116: UpperChest
     7400000: Root|0.Targeting Pose
-    7400002: Root|Idle
+    7400002: Root|Jump
     9500000: //RootNode
   externalObjects: {}
   materials:

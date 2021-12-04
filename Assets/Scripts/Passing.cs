@@ -17,6 +17,7 @@ public class Passing : MonoBehaviour
 
     private void Update()
     {
+        //Mobile
         if (IHaveBall())
         {
             float horizontal = joystick.Horizontal;

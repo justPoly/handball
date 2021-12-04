@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Countdownscript : MonoBehaviour
 {
@@ -27,5 +28,6 @@ public class Countdownscript : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         CountdownDisplay.gameObject.SetActive(false);
+
     }
 }
