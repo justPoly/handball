@@ -7,16 +7,32 @@ public class Passing : MonoBehaviour
     private Ball ball;
     private float passForce = 900f;
     public Joystick joystick;
-    
+    private bool shoot = false;
+    public GameObject gameOverPanel;
+
 
     private void Awake()
     {
         allOtherPlayers = FindObjectsOfType<Passing>().Where(t => t != this).ToArray();
         ball = FindObjectOfType<Ball>();
+        shoot = false;
+
     }
+    public void PointerDown()
+    {
+        shoot = true;
+
+    }
+    public void PointerUp()
+    {
+        shoot = false;
+    }
+
 
     private void Update()
     {
+       
+        
         if (IHaveBall())
         {
             float horizontal = joystick.Horizontal;
@@ -29,11 +45,14 @@ public class Passing : MonoBehaviour
 
             if (targetPlayer != null)
             {
-                if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
+
+                if (shoot == true) //Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
                     PassBallToPlayer(targetPlayer);
             }
         }
+
     }
+
 
     private void PassBallToPlayer(Passing targetPlayer)
     {
@@ -81,4 +100,14 @@ public class Passing : MonoBehaviour
             ball.transform.SetParent(transform);
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            gameOverPanel.SetActive(true);
+        }
+    }
+
+
+
 }

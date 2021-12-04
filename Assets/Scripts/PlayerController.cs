@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
     public float speed = 1.0f;
-    private bool moveForward, moveBackward, moveRight, moveLeft;
-    public float horizontalMove, verticalMove;
+    //private bool moveForward, moveBackward, moveRight, moveLeft;
+    //public float horizontalMove, verticalMove;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     }
  
     //pressing left button
-    public void PointerDownLeft()
+    /*public void PointerDownLeft()
     {
         moveLeft = true;
 
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     public void PointerUpBackwards()
     {
         moveBackward = false;
-    }
+    }*/
   
     // Update is called once per frame
     void Update()
@@ -75,13 +75,13 @@ public class PlayerController : MonoBehaviour
             }*/
 
                
-            MovementPlayer();
+           // MovementPlayer();
         
             
 
     }
     
-    public void MovementPlayer()
+   /* public void MovementPlayer()
     {
         if (moveLeft)
         {
@@ -110,5 +110,5 @@ public class PlayerController : MonoBehaviour
     {
         playerRb.velocity = new Vector3(horizontalMove, playerRb.velocity.y, verticalMove);  
         
-    }
+    }*/
 }
