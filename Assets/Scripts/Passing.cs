@@ -5,7 +5,7 @@ public class Passing : MonoBehaviour
 {
     private Passing[] allOtherPlayers;
     private Ball ball;
-    private float passForce = 900f;
+    private float passForce = 1800f;
     public Joystick joystick;
     private bool shoot = false;
     public GameObject gameOverPanel;
