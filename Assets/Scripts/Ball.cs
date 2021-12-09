@@ -7,6 +7,7 @@ internal class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             FindObjectOfType<GameManager>().GameOver();
+            
         }
         
     }
