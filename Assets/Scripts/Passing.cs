@@ -7,9 +7,10 @@ public class Passing : MonoBehaviour
     private Ball ball;
     private float passForce = 1800f;
     public Joystick joystick;
+    private Animator anim;
     private bool shoot = false;
-    public GameObject gameOverPanel;
-
+  
+    public bool IsPressed;
 
     private void Awake()
     {
@@ -21,10 +22,16 @@ public class Passing : MonoBehaviour
     {
         shoot = true;
 
+        IsPressed = true;
+    
+
     }
     public void PointerUp()
     {
+        IsPressed = false;
         shoot = false;
+      
+
     }
 
 
@@ -45,6 +52,7 @@ public class Passing : MonoBehaviour
             {
                 if (shoot == true) //if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
                     PassBallToPlayer(targetPlayer);
+                
             }
         }
     }
@@ -76,6 +84,7 @@ public class Passing : MonoBehaviour
         var closestAngle = allOtherPlayers
             .OrderBy(t => Vector3.Angle(direction, DirectionTo(t)))
             .FirstOrDefault();
+      
 
         return closestAngle;
     }
@@ -95,11 +104,5 @@ public class Passing : MonoBehaviour
             ball.transform.SetParent(transform);
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            gameOverPanel.SetActive(true);
-        }
-    }
+ 
 }
