@@ -940,7 +940,7 @@ Camera:
   far clip plane: 530.6
   field of view: 18.4542
   orthographic: 0
-  orthographic size: 3.6517859
+  orthographic size: 5.0625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1260,7 +1260,7 @@ PrefabInstance:
     - target: {fileID: 8040088176933248234, guid: d5fd7947c5cc9bf43b570d8ff4f20add,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.2
+      value: 4.41
       objectReference: {fileID: 0}
     - target: {fileID: 8040088176933248234, guid: d5fd7947c5cc9bf43b570d8ff4f20add,
         type: 3}
@@ -1275,7 +1275,7 @@ PrefabInstance:
     - target: {fileID: 8040088176933248234, guid: d5fd7947c5cc9bf43b570d8ff4f20add,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.702153
       objectReference: {fileID: 0}
     - target: {fileID: 8040088176933248234, guid: d5fd7947c5cc9bf43b570d8ff4f20add,
         type: 3}
@@ -1285,7 +1285,7 @@ PrefabInstance:
     - target: {fileID: 8040088176933248234, guid: d5fd7947c5cc9bf43b570d8ff4f20add,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.71202606
       objectReference: {fileID: 0}
     - target: {fileID: 8040088176933248234, guid: d5fd7947c5cc9bf43b570d8ff4f20add,
         type: 3}
@@ -1300,7 +1300,7 @@ PrefabInstance:
     - target: {fileID: 8040088176933248234, guid: d5fd7947c5cc9bf43b570d8ff4f20add,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -89.2
       objectReference: {fileID: 0}
     - target: {fileID: 8040088176933248234, guid: d5fd7947c5cc9bf43b570d8ff4f20add,
         type: 3}
@@ -2210,7 +2210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1265598365
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3700,14 +3700,14 @@ Transform:
   m_PrefabInstance: {fileID: 679721655}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107168435}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.1, y: 4.2, z: -52.199997}
+  m_LocalRotation: {x: 0, y: -0.702153, z: 0, w: 0.71202606}
+  m_LocalPosition: {x: 21.1, y: 4.41, z: -52.199997}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1864285209}
   m_Father: {fileID: 1967578774}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -89.2, z: 0}
 --- !u!114 &2107168437
 MonoBehaviour:
   m_ObjectHideFlags: 0
