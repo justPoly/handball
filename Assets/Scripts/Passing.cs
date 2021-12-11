@@ -67,7 +67,7 @@ public class Passing : MonoBehaviour
 
     private void UpdateRenderers(Passing targetPlayer)
     {
-        targetPlayer.GetComponent<Renderer>().material.color = Color.green;
+        targetPlayer.GetComponent<Renderer>().material.color = Color.red;
         foreach (var other in allOtherPlayers.Where(t => t != targetPlayer))
         {
             other.GetComponent<Renderer>().material.color = Color.white;
