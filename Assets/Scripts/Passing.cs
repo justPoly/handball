@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Passing : MonoBehaviour
 {
@@ -9,7 +10,11 @@ public class Passing : MonoBehaviour
     public Joystick joystick;
     private Animator anim;
     private bool shoot = false;
-  
+    public Text scoreText;
+    public Text highScoreText;
+    int score = 0;
+    int highScore = 0;
+
     public bool IsPressed;
 
     private void Awake()
@@ -32,6 +37,14 @@ public class Passing : MonoBehaviour
         shoot = false;
       
 
+    }
+
+    public void Start()
+    {
+
+        highScore = PlayerPrefs.GetInt("highscore");
+        scoreText.text = score.ToString() + " Points";
+        highScoreText.text = "High Score : " + highScore.ToString();
     }
 
 
@@ -63,6 +76,11 @@ public class Passing : MonoBehaviour
         ball.transform.SetParent(null);
         ball.GetComponent<Rigidbody>().isKinematic = false;
         ball.GetComponent<Rigidbody>().AddForce(direction * passForce);
+
+        score++;
+        scoreText.text = score.ToString() + " Points";
+        if (highScore < score)
+            PlayerPrefs.SetInt("highscore", score);
     }
 
     private void UpdateRenderers(Passing targetPlayer)

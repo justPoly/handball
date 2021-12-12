@@ -1301,7 +1301,15 @@ MonoBehaviour:
   m_text: 'HELP
 
 
-    Streetfield game is a game that involves'
+    Streetfield game is a game that involves
+
+
+    Passing the pall from player to player to avoid the opponent from getting the
+    ball.
+
+
+    You select theplayer you want to pass the ball to using a joystick and initiate
+    passing using the controller on the right.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1330,8 +1338,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
