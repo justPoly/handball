@@ -1,3 +1,3 @@
 # handball
-Handball game repo
+Streetfield game repo
 
