@@ -4,18 +4,19 @@ using UnityEngine.UI;
 
 public class Passing : MonoBehaviour
 {
-    private Passing[] allOtherPlayers;
+    public Passing[] allOtherPlayers;
     private Ball ball;
     private float passForce = 1800f;
     public Joystick joystick;
     private Animator anim;
-    private bool shoot = false;
+    public bool shoot = false;
     public Text scoreText;
     public Text highScoreText;
     int score = 0;
     int highScore = 0;
 
     public bool IsPressed;
+    Kicking kicking;
 
     private void Awake()
     {
@@ -41,7 +42,8 @@ public class Passing : MonoBehaviour
 
     public void Start()
     {
-
+        anim = GetComponent<Animator>();
+        kicking = GetComponent<Kicking>();
         highScore = PlayerPrefs.GetInt("highscore");
         scoreText.text = score.ToString() + " Points";
         highScoreText.text = "High Score : " + highScore.ToString();
@@ -63,9 +65,15 @@ public class Passing : MonoBehaviour
 
             if (targetPlayer != null)
             {
-                if (shoot == true) //if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
+                if (shoot == true )
+                {
+                    
+                    //if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
                     PassBallToPlayer(targetPlayer);
-                
+                    //kicking.animator.GetBool("isKicking");
+                   
+                    
+                }
             }
         }
     }
