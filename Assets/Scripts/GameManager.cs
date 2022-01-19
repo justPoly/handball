@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public static bool gameIsPaused= false;
     public Button pauseButton;
     public Button playButton;
+    public Button Reload;
+    public Button Quit;
     // Start is called before the first frame update
 
     private void Start()
@@ -17,6 +19,8 @@ public class GameManager : MonoBehaviour
        // gameIsPaused = false;
         playButton.gameObject.SetActive(false);
         pauseButton.gameObject.SetActive(true);
+        Reload.gameObject.SetActive(false);
+        Quit.gameObject.SetActive(false);
     }
     void FixedUpdate()
     {
@@ -25,7 +29,8 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         pauseButton.gameObject.SetActive(false);
-       
+        Reload.gameObject.SetActive(true);
+        Quit.gameObject.SetActive(true);
         playButton.interactable = true;
         playButton.gameObject.SetActive(true);
         gameIsPaused = true;
@@ -39,7 +44,8 @@ public class GameManager : MonoBehaviour
     public void ResumeGame()
     {
         playButton.gameObject.SetActive(false);
-       
+        Reload.gameObject.SetActive(false);
+        Quit.gameObject.SetActive(false);
         pauseButton.gameObject.SetActive(true);
         pauseButton.enabled = true;
         gameIsPaused = false;
@@ -59,5 +65,15 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         gameOverPanel.SetActive(true);
     }
-    
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("quit!");
+        Application.Quit();
+    }
+
 }
