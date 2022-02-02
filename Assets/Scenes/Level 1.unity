@@ -366,6 +366,7 @@ MonoBehaviour:
   shoot: 0
   scoreText: {fileID: 1759633381}
   highScoreText: {fileID: 915123795}
+  playerIndicator: {fileID: 411237102}
   IsPressed: 0
 --- !u!54 &21771917
 Rigidbody:
@@ -2850,6 +2851,12 @@ Transform:
   m_Father: {fileID: 179663515}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &411237102 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1758629138285362, guid: 11a653b9169986c4f9436a3002fb4516,
+    type: 3}
+  m_PrefabInstance: {fileID: 874115486}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &415139605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3637,7 +3644,7 @@ Camera:
   far clip plane: 530.6
   field of view: 18.4542
   orthographic: 0
-  orthographic size: 5.0625
+  orthographic size: 0.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3789,10 +3796,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wireColor: {r: 1, g: 1, b: 1, a: 1}
-  UnitsSize: 18
-  constraint: 0
+  UnitsSize: 1
+  constraint: 1
   camera: {fileID: 534669904}
-  executeInUpdate: 1
+  executeInUpdate: 0
 --- !u!1 &545325600
 GameObject:
   m_ObjectHideFlags: 0
@@ -5440,6 +5447,7 @@ MonoBehaviour:
   shoot: 0
   scoreText: {fileID: 1759633381}
   highScoreText: {fileID: 915123795}
+  playerIndicator: {fileID: 411237102}
   IsPressed: 0
 --- !u!54 &801549978
 Rigidbody:
@@ -5759,6 +5767,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856405851}
   m_CullTransparentMesh: 0
+--- !u!1001 &874115486
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1758629138285362, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_Name
+      value: SelectionRing_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758629138285362, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
 --- !u!1 &886029237
 GameObject:
   m_ObjectHideFlags: 0
@@ -7255,6 +7336,7 @@ MonoBehaviour:
   shoot: 0
   scoreText: {fileID: 1759633381}
   highScoreText: {fileID: 915123795}
+  playerIndicator: {fileID: 411237102}
   IsPressed: 0
 --- !u!54 &1017366102
 Rigidbody:
@@ -11562,10 +11644,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5749210c4766f4d91d55d042ba2165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chasingDistance: 5
-  chasingInterval: 1
-  chasingTimer: 5
-  speed: 20
+  chasingDistance: 12
+  chasingInterval: 2
+  chasingTimer: 0
+  speed: 8
 --- !u!4 &1336221273
 Transform:
   m_ObjectHideFlags: 0
@@ -12895,6 +12977,7 @@ MonoBehaviour:
   shoot: 0
   scoreText: {fileID: 1759633381}
   highScoreText: {fileID: 915123795}
+  playerIndicator: {fileID: 411237102}
   IsPressed: 0
 --- !u!54 &1518621336
 Rigidbody:
@@ -13986,7 +14069,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1675086667
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14019,8 +14102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6b930093c980b4db01ca3e42244697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountdownTime: 3
-  CountdownDisplay: {fileID: 1265598366}
+  CountdownTime: 0
+  CountdownDisplay: {fileID: 0}
 --- !u!1 &1675417444
 GameObject:
   m_ObjectHideFlags: 0
@@ -16792,6 +16875,7 @@ MonoBehaviour:
   shoot: 0
   scoreText: {fileID: 1759633381}
   highScoreText: {fileID: 915123795}
+  playerIndicator: {fileID: 411237102}
   IsPressed: 0
 --- !u!54 &2107168439
 Rigidbody:
@@ -17515,8 +17599,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18c9d59482c75f4b8a5f98336530807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 2634277246211412479}
-  isKicking: 1
+  animator: {fileID: 0}
+  isKicking: 0
 --- !u!1 &2634277246218674755
 GameObject:
   m_ObjectHideFlags: 0

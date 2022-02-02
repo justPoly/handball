@@ -15,6 +15,8 @@ public class Passing : MonoBehaviour
     int score = 0;
     int highScore = 0;
 
+    public GameObject playerIndicator;
+
     public bool IsPressed;
     Kicking kicking;
 
@@ -52,6 +54,7 @@ public class Passing : MonoBehaviour
 
     private void Update()
     {
+        
         //Mobile
         if (IHaveBall())
         {
@@ -59,6 +62,9 @@ public class Passing : MonoBehaviour
             float vertical = joystick.Vertical;
 
             Vector3 direction = new Vector3(horizontal, 0f, vertical);
+            
+            Debug.DrawRay(transform.position, direction * 40f, Color.blue);
+            
 
             var targetPlayer = FindPlayerInDirection(direction);
             UpdateRenderers(targetPlayer);
@@ -71,7 +77,6 @@ public class Passing : MonoBehaviour
                     //if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
                     PassBallToPlayer(targetPlayer);
                     //kicking.animator.GetBool("isKicking");
-                   
                     
                 }
             }
@@ -107,11 +112,12 @@ public class Passing : MonoBehaviour
 
     private Passing FindPlayerInDirection(Vector3 direction)
     {
+        playerIndicator.gameObject.SetActive(true);
+        playerIndicator.transform.position = transform.position + direction;
         var closestAngle = allOtherPlayers
             .OrderBy(t => Vector3.Angle(direction, DirectionTo(t)))
             .FirstOrDefault();
-      
-
+          
         return closestAngle;
     }
 
