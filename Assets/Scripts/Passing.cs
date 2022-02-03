@@ -74,9 +74,11 @@ public class Passing : MonoBehaviour
 
             if (targetPlayer != null)
             {
+                playerIndicator.gameObject.SetActive(true);
+                playerIndicator.transform.position = targetPlayer.transform.position;
                 if (shoot == true )
                 {
-                    
+                 
                     //if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
                     PassBallToPlayer(targetPlayer);
                     //kicking.animator.GetBool("isKicking");
@@ -116,8 +118,7 @@ public class Passing : MonoBehaviour
 
     private Passing FindPlayerInDirection(Vector3 direction)
     {
-        playerIndicator.gameObject.SetActive(true);
-        playerIndicator.transform.position = transform.position + direction;
+        
         var closestAngle = allOtherPlayers
             .OrderBy(t => Vector3.Angle(direction, DirectionTo(t)))
             .FirstOrDefault();
