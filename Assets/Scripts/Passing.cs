@@ -17,6 +17,9 @@ public class Passing : MonoBehaviour
 
     public GameObject playerIndicator;
 
+    public AudioClip passSound;
+    private AudioSource passAudio;
+
     public bool IsPressed;
     Kicking kicking;
 
@@ -44,6 +47,7 @@ public class Passing : MonoBehaviour
 
     public void Start()
     {
+        passAudio = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         kicking = GetComponent<Kicking>();
         highScore = PlayerPrefs.GetInt("highscore");
@@ -54,7 +58,6 @@ public class Passing : MonoBehaviour
 
     private void Update()
     {
-        
         //Mobile
         if (IHaveBall())
         {
@@ -85,6 +88,7 @@ public class Passing : MonoBehaviour
 
     private void PassBallToPlayer(Passing targetPlayer)
     {
+        passAudio.PlayOneShot(passSound, 1.0f);
         var direction = DirectionTo(targetPlayer);
         ball.transform.SetParent(null);
         ball.GetComponent<Rigidbody>().isKinematic = false;
