@@ -8,12 +8,16 @@ public class Passing : MonoBehaviour
     private Ball ball;
     private float passForce = 1800f;
     public Joystick joystick;
-    private Animator anim;
+   // private Animator anim;
     public bool shoot = false;
     public Text scoreText;
     public Text highScoreText;
     int score = 0;
     int highScore = 0;
+    public Kicking kicking;
+    //public Animator animator;
+    
+    public bool isKicking = false;
 
     public GameObject playerIndicator;
 
@@ -21,7 +25,8 @@ public class Passing : MonoBehaviour
     private AudioSource passAudio;
 
     public bool IsPressed;
-    Kicking kicking;
+   //public  GameManager gameManager;
+    
 
     private void Awake()
     {
@@ -48,8 +53,9 @@ public class Passing : MonoBehaviour
     public void Start()
     {
         passAudio = GetComponent<AudioSource>();
-        anim = GetComponent<Animator>();
+       // anim = GetComponent<Animator>();
         kicking = GetComponent<Kicking>();
+    
         highScore = PlayerPrefs.GetInt("highscore");
         scoreText.text = score.ToString() + " Points";
         highScoreText.text = "High Score : " + highScore.ToString();
@@ -78,11 +84,15 @@ public class Passing : MonoBehaviour
                 playerIndicator.transform.position = targetPlayer.transform.position;
                 if (shoot == true )
                 {
-                 
+                   
                     //if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
                     PassBallToPlayer(targetPlayer);
-                    //kicking.animator.GetBool("isKicking");
-                    
+                    //anim.SetBool("isKicking", true);
+                   // kicking.animator.SetBool("isKicking", true);
+                    //kicking.isKicking = true;
+                 
+                  
+
                 }
             }
         }
@@ -122,12 +132,15 @@ public class Passing : MonoBehaviour
         var closestAngle = allOtherPlayers
             .OrderBy(t => Vector3.Angle(direction, DirectionTo(t)))
             .FirstOrDefault();
-          
+
+
         return closestAngle;
     }
 
     public bool IHaveBall()
     {
+
+    
         return transform.childCount > 0;
     }
 
@@ -139,6 +152,7 @@ public class Passing : MonoBehaviour
             ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
             ball.GetComponent<Rigidbody>().isKinematic = true;
             ball.transform.SetParent(transform);
+           
         }
     }
  

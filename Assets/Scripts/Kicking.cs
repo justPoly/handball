@@ -6,7 +6,7 @@ public class Kicking : MonoBehaviour
 {
    
     public Animator animator;
-    //Passing passing;
+    Passing passing;
     public bool isKicking = false;
     
     // Start is called before the first frame update
@@ -14,7 +14,7 @@ public class Kicking : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         Debug.Log(animator);
-       //passing = GetComponent<Passing>();
+        passing =GetComponent<Passing>();
        
         
     }
@@ -22,20 +22,29 @@ public class Kicking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isKicking = true;
+       // isKicking = true;
         if (isKicking==true)
         {
-            isKicking = false;
+            
+            animator.SetTrigger("Kick");
             animator.SetBool("isKicking", true);
+         //   passing.shoot = true;
         }
 
         if(isKicking == false)
         {
             animator.SetBool("isKicking", false);
-            isKicking = false;
+
+           // passing.shoot = false;
         }
 
 
+    }
+    public void KickBall()
+    {
+        animator.SetTrigger("Kick");
+        animator.SetBool("isKicking", true);
+        
     }
 
 }

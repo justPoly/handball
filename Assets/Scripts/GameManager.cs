@@ -12,10 +12,17 @@ public class GameManager : MonoBehaviour
     public Button playButton;
     public Button Reload;
     public Button Quit;
+
+    public AudioClip gameOver;
+    public AudioSource endGame;
+   // public Kicking kicking;
+
+    
     // Start is called before the first frame update
 
     private void Start()
     {
+       // kicking = FindObjectOfType<Kicking>().GetComponent<Kicking>();
        // gameIsPaused = false;
         playButton.gameObject.SetActive(false);
         pauseButton.gameObject.SetActive(true);
@@ -62,6 +69,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
+        endGame.PlayOneShot(gameOver, 0.8f);
         Time.timeScale = 0;
         gameOverPanel.SetActive(true);
     }
