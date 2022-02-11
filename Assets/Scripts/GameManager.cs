@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
-        endGame.PlayOneShot(gameOver, 0.8f);
+        endGame.PlayOneShot(gameOver, 0.2f);
         Time.timeScale = 0;
         gameOverPanel.SetActive(true);
     }

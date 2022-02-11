@@ -27,12 +27,19 @@ public class Passing : MonoBehaviour
     public bool IsPressed;
    //public  GameManager gameManager;
     
+    //Player Movement
+    private Rigidbody playerRb;
+    public float speed = 400.0f;
+    public float horizontalMove, verticalMove;
+
+    public Vector3 startPosition;
 
     private void Awake()
     {
         allOtherPlayers = FindObjectsOfType<Passing>().Where(t => t != this).ToArray();
         ball = FindObjectOfType<Ball>();
         shoot = false;
+        startPosition = transform.position;
     }
     public void PointerDown()
     {
@@ -55,6 +62,8 @@ public class Passing : MonoBehaviour
         passAudio = GetComponent<AudioSource>();
        // anim = GetComponent<Animator>();
         kicking = GetComponent<Kicking>();
+        playerRb = GetComponent<Rigidbody>();
+
     
         highScore = PlayerPrefs.GetInt("highscore");
         scoreText.text = score.ToString() + " Points";
@@ -67,6 +76,15 @@ public class Passing : MonoBehaviour
         //Mobile
         if (IHaveBall())
         {
+            //PC Up/ Down movement
+            float forwardInput = Input.GetAxis("Vertical");
+            playerRb.AddForce(Vector3.forward * speed * forwardInput);
+
+            //PC Left/ right movement
+            float horizontalInput = Input.GetAxis("Horizontal");
+            playerRb.AddForce(Vector3.right * speed * horizontalInput);
+
+
             float horizontal = joystick.Horizontal;
             float vertical = joystick.Vertical;
 
@@ -96,6 +114,15 @@ public class Passing : MonoBehaviour
                 }
             }
         }
+        if (!IHaveBall()) {
+            transform.position = startPosition;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        playerRb.velocity = new Vector3(horizontalMove, playerRb.velocity.y, verticalMove);  
+        
     }
 
     private void PassBallToPlayer(Passing targetPlayer)
@@ -141,7 +168,7 @@ public class Passing : MonoBehaviour
     {
 
     
-        return transform.childCount > 0;
+        return transform.childCount > 1;
     }
 
     private void OnTriggerEnter(Collider other)
