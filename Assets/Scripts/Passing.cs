@@ -8,13 +8,13 @@ public class Passing : MonoBehaviour
     private Ball ball;
     private float passForce = 1800f;
     public Joystick joystick;
-   // private Animator anim;
+    private Animator anim;
     public bool shoot = false;
     public Text scoreText;
     public Text highScoreText;
     int score = 0;
     int highScore = 0;
-    public Kicking kicking;
+   // public Kicking kicking;
     //public Animator animator;
     
     public bool isKicking = false;
@@ -34,6 +34,9 @@ public class Passing : MonoBehaviour
 
     public Vector3 startPosition;
 
+    //hashes for animation
+    int KickHash = Animator.StringToHash("kick");
+    int notKickHash = Animator.StringToHash("isntKicking");
     private void Awake()
     {
         allOtherPlayers = FindObjectsOfType<Passing>().Where(t => t != this).ToArray();
@@ -60,8 +63,8 @@ public class Passing : MonoBehaviour
     public void Start()
     {
         passAudio = GetComponent<AudioSource>();
-       // anim = GetComponent<Animator>();
-        kicking = GetComponent<Kicking>();
+        anim = GetComponent<Animator>();
+        //kicking = GetComponent<Kicking>();
         playerRb = GetComponent<Rigidbody>();
 
     
@@ -102,15 +105,21 @@ public class Passing : MonoBehaviour
                 playerIndicator.transform.position = targetPlayer.transform.position;
                 if (shoot == true )
                 {
-                   
-                    //if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
+                     anim.SetTrigger(KickHash);
                     PassBallToPlayer(targetPlayer);
-                    //anim.SetBool("isKicking", true);
-                   // kicking.animator.SetBool("isKicking", true);
-                    //kicking.isKicking = true;
-                 
-                  
+                    anim.SetBool(notKickHash, false);
 
+                    //if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
+
+                    //anim.SetBool("isKicking", true);
+                    // kicking.animator.SetBool("isKicking", true);
+                    //kicking.isKicking = true;
+
+
+                }
+                else if(shoot !=true)
+                {
+                    anim.SetBool(notKickHash, true);
                 }
             }
         }
