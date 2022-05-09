@@ -9,18 +9,18 @@ AnimatorController:
   m_Name: Player
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: isKicking
+  - m_Name: isntKicking
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
-    m_Controller: {fileID: 0}
-  - m_Name: Kick
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: kick
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
-    m_Controller: {fileID: 0}
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -43,10 +43,10 @@ AnimatorStateTransition:
   m_Name: Kick
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Kick
+    m_ConditionEvent: kick
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: isKicking
+  - m_ConditionMode: 2
+    m_ConditionEvent: isntKicking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102587045640242352}
@@ -54,10 +54,10 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0.094501674
-  m_ExitTime: 0.19999999
-  m_HasExitTime: 0
+  m_TransitionDuration: 0.12660286
+  m_TransitionOffset: 0.18220316
+  m_ExitTime: 0.36268127
+  m_HasExitTime: 1
   m_HasFixedDuration: 0
   m_InterruptionSource: 3
   m_OrderedInterruption: 1
@@ -70,11 +70,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: isKicking
-    m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: Kick
+    m_ConditionEvent: isntKicking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102324533877273944}
@@ -82,10 +79,10 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.51
-  m_HasExitTime: 0
+  m_TransitionDuration: 0.14580113
+  m_TransitionOffset: 0.030848332
+  m_ExitTime: 0.5305655
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -176,8 +173,8 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Soccer Pass
-  m_Speed: 1
-  m_CycleOffset: 0
+  m_Speed: 1.68
+  m_CycleOffset: 1
   m_Transitions:
   - {fileID: 1101309231147231616}
   m_StateMachineBehaviours: []
