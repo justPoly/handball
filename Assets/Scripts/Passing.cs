@@ -107,7 +107,7 @@ public class Passing : MonoBehaviour
                 {
                      anim.SetTrigger(KickHash);
                     PassBallToPlayer(targetPlayer);
-                    anim.SetBool(notKickHash, false);
+                    // anim.SetBool(notKickHash, false);
 
                     //if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
 
@@ -117,10 +117,10 @@ public class Passing : MonoBehaviour
 
 
                 }
-                else if(shoot !=true)
-                {
-                    anim.SetBool(notKickHash, true);
-                }
+                // else if(shoot !=true)
+                // {
+                //     anim.SetBool(notKickHash, true);
+                // }
             }
         }
         if (!IHaveBall()) {
